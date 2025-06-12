@@ -128,3 +128,9 @@ X_train_house, X_test_house, y_train_house, y_test_house = train_test_split(
 
 print(f"   - Training samples: {X_train_house.shape[0]}")
 print(f"   - Testing samples: {X_test_house.shape[0]}")
+
+# Train linear regression model
+print("\n2. Training Linear Regression Model:")
+lr_model = LinearRegression()
+lr_model.fit(X_train_house, y_train_house)
+print("   - Model training completed")
