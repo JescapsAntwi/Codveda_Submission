@@ -202,3 +202,7 @@ for k in k_values:
     k_results.append(accuracy)
     
     print(f"   - K={k}: Accuracy = {accuracy:.4f}")
+
+# Find best K value
+best_k = k_values[np.argmax(k_results)]
+print(f"\n   Best K value: {best_k} with accuracy: {max(k_results):.4f}")
