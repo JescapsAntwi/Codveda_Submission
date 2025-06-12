@@ -19,7 +19,7 @@ warnings.filterwarnings('ignore')
 
 print("\n"+ "=" * 50)
 print("LEVEL 1 - BASIC TASKS")
-print("= " * 50)
+print("=" * 50)
 
 print("\n--- TASK 1: DATA PREPROCESSING ---")
 
@@ -39,3 +39,11 @@ data = {
 
 # Create DataFrame
 df = pd.DataFrame(data)
+
+# Introduce missing values randomly
+missing_indices = np.random.choice(df.index, size=int(0.1 * len(df)), replace=False)
+df.loc[missing_indices[:50], 'income'] = np.nan
+df.loc[missing_indices[50:], 'experience'] = np.nan
+
+print(f"Original dataset shape: {df.shape}")
+print(f"Missing values per column:\n{df.isnull().sum()}")
