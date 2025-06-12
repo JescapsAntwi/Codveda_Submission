@@ -79,3 +79,8 @@ print("\n3. Normalizing Numerical Features:")
 # Select numerical columns for scaling
 numerical_cols = ['age', 'income', 'experience']
 scaler = StandardScaler()
+
+# Fit and transform numerical features
+df[numerical_cols] = scaler.fit_transform(df[numerical_cols])
+print("   - Applied StandardScaler to numerical features")
+print(f"   - Scaled columns: {numerical_cols}")
