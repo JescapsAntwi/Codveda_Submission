@@ -143,3 +143,7 @@ print("\n3. Model Evaluation:")
 r2 = r2_score(y_test_house, y_pred_house)
 mse = mean_squared_error(y_test_house, y_pred_house)
 rmse = np.sqrt(mse)
+
+print(f"   - R-squared Score: {r2:.4f}")
+print(f"   - Mean Squared Error: {mse:.4f}")
+print(f"   - Root Mean Squared Error: {rmse:.4f}")
