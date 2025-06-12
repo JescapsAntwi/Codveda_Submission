@@ -246,3 +246,8 @@ X_train_bin, X_test_bin, y_train_bin, y_test_bin = train_test_split(
 binary_scaler = StandardScaler()
 X_train_bin_scaled = binary_scaler.fit_transform(X_train_bin)
 X_test_bin_scaled = binary_scaler.transform(X_test_bin)
+
+# Train logistic regression model
+print("\n2. Training Logistic Regression Model:")
+log_reg = LogisticRegression(random_state=42)
+log_reg.fit(X_train_bin_scaled, y_train_bin)
