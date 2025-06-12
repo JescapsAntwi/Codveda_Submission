@@ -16,3 +16,7 @@ from sklearn.metrics import (accuracy_score, confusion_matrix, classification_re
 from sklearn.datasets import load_iris, load_boston, make_classification, make_blobs
 import warnings
 warnings.filterwarnings('ignore')
+
+print("\n"+ "=" * 50)
+print("LEVEL 1 - BASIC TASKS")
+print("= * 50")
