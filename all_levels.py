@@ -312,3 +312,22 @@ feature_importance_dt = pd.DataFrame({
 print("   Feature importance ranking:")
 for i, row in feature_importance_dt.iterrows():
     print(f"   - {row['Feature']}: {row['Importance']:.4f}")
+
+# Pruning demonstration
+print("\n3. Tree Pruning Analysis:")
+# Train trees with different max_depth values
+depths = [2, 3, 4, 5, 6, None]
+pruning_results = []
+
+for depth in depths:
+    dt_temp = DecisionTreeClassifier(random_state=42, max_depth=depth)
+    dt_temp.fit(X_train_iris, y_train_iris)
+    y_pred_temp = dt_temp.predict(X_test_iris)
+    acc_temp = accuracy_score(y_test_iris, y_pred_temp)
+    pruning_results.append(acc_temp)
+    
+    depth_str = str(depth) if depth is not None else "None"
+    print(f"   - Max depth {depth_str}: Accuracy = {acc_temp:.4f}")
+
+best_depth = depths[np.argmax(pruning_results)]
+print(f"   - Best max_depth: {best_depth}")
