@@ -56,3 +56,8 @@ print("\n1. Handling Missing Data:")
 median_income = df['income'].median()
 df['income'].fillna(median_income, inplace=True)
 print(f"   - Filled missing income values with median: {median_income:.2f}")
+
+# Fill missing experience with mean
+mean_experience = df['experience'].mean()
+df['experience'].fillna(mean_experience, inplace=True)
+print(f"   - Filled missing experience values with mean: {mean_experience:.2f}")
