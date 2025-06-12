@@ -268,3 +268,15 @@ print(f"   - Confusion Matrix:\n{conf_matrix}")
 fpr, tpr, _ = roc_curve(y_test_bin, y_pred_proba)
 roc_auc = auc(fpr, tpr)
 print(f"   - ROC AUC Score: {roc_auc:.4f}")
+
+# Interpret coefficients and odds ratios
+print("\n4. Coefficient Interpretation:")
+coefficients = pd.DataFrame({
+    'Feature': feature_names,
+    'Coefficient': log_reg.coef_[0],
+    'Odds_Ratio': np.exp(log_reg.coef_[0])
+}).sort_values('Coefficient', key=abs, ascending=False)
+
+print("   Top 5 most important features:")
+for i, row in coefficients.head().iterrows():
+    print(f"   - {row['Feature']}: Coef={row['Coefficient']:.4f}, OR={row['Odds_Ratio']:.4f}")
