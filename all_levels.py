@@ -372,3 +372,14 @@ cluster_labels = final_kmeans.fit_predict(X_cluster_scaled)
 # Analyze clusters
 print("   - Clustering completed")
 print(f"   - Cluster centers shape: {final_kmeans.cluster_centers_.shape}")
+
+# Cluster analysis
+unique_labels, counts = np.unique(cluster_labels, return_counts=True)
+print("   - Cluster sizes:")
+for label, count in zip(unique_labels, counts):
+    print(f"     Cluster {label}: {count} points")
+
+# Calculate silhouette score
+from sklearn.metrics import silhouette_score
+silhouette_avg = silhouette_score(X_cluster_scaled, cluster_labels)
+print(f"   - Average Silhouette Score: {silhouette_avg:.4f}")
