@@ -342,3 +342,8 @@ print(f"   - Dataset shape: {X_cluster.shape}")
 # Scale the data
 cluster_scaler = StandardScaler()
 X_cluster_scaled = cluster_scaler.fit_transform(X_cluster)
+
+# Determine optimal number of clusters using elbow method
+print("\n2. Finding Optimal Number of Clusters (Elbow Method):")
+k_range = range(1, 11)
+inertias = []
