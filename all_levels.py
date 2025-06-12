@@ -383,3 +383,10 @@ for label, count in zip(unique_labels, counts):
 from sklearn.metrics import silhouette_score
 silhouette_avg = silhouette_score(X_cluster_scaled, cluster_labels)
 print(f"   - Average Silhouette Score: {silhouette_avg:.4f}")
+
+print("========== RANDOM FOREST CLASSIFIER IMPLEMENTATION ===========")
+print("1. Creating Complex Classification Dataset:")
+X_complex, y_complex = make_classification(
+    n_samples=1500, n_features=20, n_informative=15, n_redundant=3,
+    n_classes=3, random_state=42
+)
