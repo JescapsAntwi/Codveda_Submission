@@ -282,3 +282,10 @@ for i, row in coefficients.head().iterrows():
     print(f"   - {row['Feature']}: Coef={row['Coefficient']:.4f}, OR={row['Odds_Ratio']:.4f}")
 
 print("\n============= DECISION TREES ================")
+
+# Use Iris dataset for decision tree
+print("1. Training Decision Tree on Iris Dataset:")
+
+# Train decision tree
+dt_classifier = DecisionTreeClassifier(random_state=42, max_depth=4)
+dt_classifier.fit(X_train_iris, y_train_iris)
