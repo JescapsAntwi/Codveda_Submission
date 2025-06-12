@@ -125,3 +125,6 @@ print("   - Applied StandardScaler to all features")
 X_train_house, X_test_house, y_train_house, y_test_house = train_test_split(
     X_housing_scaled, y_housing, test_size=0.2, random_state=42
 )
+
+print(f"   - Training samples: {X_train_house.shape[0]}")
+print(f"   - Testing samples: {X_test_house.shape[0]}")
