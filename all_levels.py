@@ -67,3 +67,8 @@ print(f"   - Filled missing experience values with mean: {mean_experience:.2f}")
 education_mapping = {'High School': 1, 'Bachelor': 2, 'Master': 3, 'PhD': 4}
 df['education_encoded'] = df['education'].map(education_mapping)
 print("   - Applied label encoding to education (ordinal)")
+
+# One-hot encoding for city (no ordinal relationship)
+city_dummies = pd.get_dummies(df['city'], prefix='city')
+df = pd.concat([df, city_dummies], axis=1)
+print("   - Applied one-hot encoding to city (nominal)")
