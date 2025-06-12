@@ -20,3 +20,5 @@ warnings.filterwarnings('ignore')
 print("\n"+ "=" * 50)
 print("LEVEL 1 - BASIC TASKS")
 print("= * 50")
+
+print("\n--- TASK 1: DATA PREPROCESSING ---")
