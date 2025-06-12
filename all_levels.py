@@ -437,3 +437,14 @@ accuracy_rf = accuracy_score(y_test_rf, y_pred_rf)
 f1_rf = f1_score(y_test_rf, y_pred_rf, average='weighted')
 print(f"   - Test accuracy: {accuracy_rf:.4f}")
 print(f"   - Test F1-score: {f1_rf:.4f}")
+
+# Feature importance analysis
+print("\n4. Feature Importance Analysis:")
+feature_importance_rf = pd.DataFrame({
+    'Feature': complex_feature_names,
+    'Importance': rf_classifier.feature_importances_
+}).sort_values('Importance', ascending=False)
+
+print("   Top 10 most important features:")
+for i, row in feature_importance_rf.head(10).iterrows():
+    print(f"   - {row['Feature']}: {row['Importance']:.4f}")
