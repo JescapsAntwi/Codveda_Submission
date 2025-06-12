@@ -255,3 +255,11 @@ log_reg.fit(X_train_bin_scaled, y_train_bin)
 # Make predictions
 y_pred_log = log_reg.predict(X_test_bin_scaled)
 y_pred_proba = log_reg.predict_proba(X_test_bin_scaled)[:, 1]
+
+# Evaluate the model
+print("\n3. Model Evaluation:")
+accuracy = accuracy_score(y_test_bin, y_pred_log)
+conf_matrix = confusion_matrix(y_test_bin, y_pred_log)
+
+print(f"   - Accuracy: {accuracy:.4f}")
+print(f"   - Confusion Matrix:\n{conf_matrix}")
