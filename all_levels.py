@@ -179,3 +179,6 @@ X_train_iris, X_test_iris, y_train_iris, y_test_iris = train_test_split(
 iris_scaler = StandardScaler()
 X_train_iris_scaled = iris_scaler.fit_transform(X_train_iris)
 X_test_iris_scaled = iris_scaler.transform(X_test_iris)
+
+print(f"   - Training samples: {X_train_iris_scaled.shape[0]}")
+print(f"   - Testing samples: {X_test_iris_scaled.shape[0]}")
