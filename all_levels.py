@@ -426,3 +426,8 @@ print(f"   - Best CV score: {grid_search.best_score_:.4f}")
 print("\n3. Training Final Random Forest Model:")
 rf_classifier = grid_search.best_estimator_
 y_pred_rf = rf_classifier.predict(X_test_rf_scaled)
+
+# Cross-validation evaluation
+cv_scores = cross_val_score(rf_classifier, X_train_rf_scaled, y_train_rf, cv=5)
+print(f"   - Cross-validation scores: {cv_scores}")
+print(f"   - Mean CV accuracy: {cv_scores.mean():.4f} (+/- {cv_scores.std() * 2:.4f})")
