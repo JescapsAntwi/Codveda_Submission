@@ -26,3 +26,13 @@ print("\n--- TASK 1: DATA PREPROCESSING ---")
 # Create a sample dataset with missing values and categorical variables
 np.random.seed(42)
 n_samples = 1000
+
+# Generate sample data
+data = {
+    'age': np.random.randint(18, 80, n_samples),
+    'income': np.random.normal(50000, 15000, n_samples),
+    'education': np.random.choice(['High School', 'Bachelor', 'Master', 'PhD'], n_samples),
+    'city': np.random.choice(['New York', 'Los Angeles', 'Chicago', 'Houston'], n_samples),
+    'experience': np.random.randint(0, 30, n_samples),
+    'target': np.random.randint(0, 2, n_samples)  # Binary target
+}
