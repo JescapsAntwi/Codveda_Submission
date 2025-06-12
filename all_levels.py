@@ -72,3 +72,10 @@ print("   - Applied label encoding to education (ordinal)")
 city_dummies = pd.get_dummies(df['city'], prefix='city')
 df = pd.concat([df, city_dummies], axis=1)
 print("   - Applied one-hot encoding to city (nominal)")
+
+# Step 3: Normalize/Standardize numerical features
+print("\n3. Normalizing Numerical Features:")
+
+# Select numerical columns for scaling
+numerical_cols = ['age', 'income', 'experience']
+scaler = StandardScaler()
