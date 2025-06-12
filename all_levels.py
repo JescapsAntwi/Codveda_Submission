@@ -47,3 +47,12 @@ df.loc[missing_indices[50:], 'experience'] = np.nan
 
 print(f"Original dataset shape: {df.shape}")
 print(f"Missing values per column:\n{df.isnull().sum()}")
+
+
+# Step 1: Handle missing data
+print("\n1. Handling Missing Data:")
+
+# Fill missing income with median (robust to outliers)
+median_income = df['income'].median()
+df['income'].fillna(median_income, inplace=True)
+print(f"   - Filled missing income values with median: {median_income:.2f}")
