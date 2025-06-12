@@ -289,3 +289,6 @@ print("1. Training Decision Tree on Iris Dataset:")
 # Train decision tree
 dt_classifier = DecisionTreeClassifier(random_state=42, max_depth=4)
 dt_classifier.fit(X_train_iris, y_train_iris)
+
+# Make predictions
+y_pred_dt = dt_classifier.predict(X_test_iris)
