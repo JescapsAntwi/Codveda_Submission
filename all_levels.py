@@ -390,3 +390,17 @@ X_complex, y_complex = make_classification(
     n_samples=1500, n_features=20, n_informative=15, n_redundant=3,
     n_classes=3, random_state=42
 )
+
+complex_feature_names = [f'feature_{i+1}' for i in range(X_complex.shape[1])]
+print(f"   - Dataset shape: {X_complex.shape}")
+print(f"   - Classes: {np.unique(y_complex)}")
+print(f"   - Class distribution: {np.bincount(y_complex)}")
+
+# Split and scale the data
+X_train_rf, X_test_rf, y_train_rf, y_test_rf = train_test_split(
+    X_complex, y_complex, test_size=0.2, random_state=42, stratify=y_complex
+)
+
+rf_scaler = StandardScaler()
+X_train_rf_scaled = rf_scaler.fit_transform(X_train_rf)
+X_test_rf_scaled = rf_scaler.transform(X_test_rf)
