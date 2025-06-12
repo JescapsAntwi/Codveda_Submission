@@ -13,6 +13,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.metrics import (accuracy_score, confusion_matrix, classification_report, 
                            mean_squared_error, r2_score, roc_curve, auc, f1_score)
+from sklearn.datasets import load_iris, make_classification, make_blobs
 #from sklearn.datasets import load_iris, load_boston, make_classification, make_blobs
 from sklearn.datasets import fetch_california_housing, fetch_openml
 import warnings
