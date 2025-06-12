@@ -263,3 +263,8 @@ conf_matrix = confusion_matrix(y_test_bin, y_pred_log)
 
 print(f"   - Accuracy: {accuracy:.4f}")
 print(f"   - Confusion Matrix:\n{conf_matrix}")
+
+# ROC Curve
+fpr, tpr, _ = roc_curve(y_test_bin, y_pred_proba)
+roc_auc = auc(fpr, tpr)
+print(f"   - ROC AUC Score: {roc_auc:.4f}")
