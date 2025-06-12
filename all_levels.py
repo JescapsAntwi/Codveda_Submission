@@ -336,3 +336,9 @@ print("============== K MEANS CLUSTERING IMPLEMENTATION ================")
 # Create clustering dataset
 print("1. Creating Clustering Dataset:")
 X_cluster, _ = make_blobs(n_samples=300, centers=4, cluster_std=1.0, random_state=42)
+
+print(f"   - Dataset shape: {X_cluster.shape}")
+
+# Scale the data
+cluster_scaler = StandardScaler()
+X_cluster_scaled = cluster_scaler.fit_transform(X_cluster)
