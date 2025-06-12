@@ -120,3 +120,8 @@ print("\n1. Preprocessing Housing Data:")
 housing_scaler = StandardScaler()
 X_housing_scaled = housing_scaler.fit_transform(X_housing)
 print("   - Applied StandardScaler to all features")
+
+# Split the data
+X_train_house, X_test_house, y_train_house, y_test_house = train_test_split(
+    X_housing_scaled, y_housing, test_size=0.2, random_state=42
+)
