@@ -14,6 +14,7 @@ from sklearn.svm import SVC
 from sklearn.metrics import (accuracy_score, confusion_matrix, classification_report, 
                            mean_squared_error, r2_score, roc_curve, auc, f1_score)
 #from sklearn.datasets import load_iris, load_boston, make_classification, make_blobs
+from sklearn.datasets import fetch_california_housing, fetch_openml
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -61,3 +62,8 @@ print(f"   - Filled missing income values with median: {median_income:.2f}")
 mean_experience = df['experience'].mean()
 df['experience'].fillna(mean_experience, inplace=True)
 print(f"   - Filled missing experience values with mean: {mean_experience:.2f}")
+
+# Label encoding for education (ordinal relationship)
+education_mapping = {'High School': 1, 'Bachelor': 2, 'Master': 3, 'PhD': 4}
+df['education_encoded'] = df['education'].map(education_mapping)
+print("   - Applied label encoding to education (ordinal)")
