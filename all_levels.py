@@ -359,3 +359,16 @@ for k in k_range:
 rate_decrease = []
 for i in range(1, len(inertias)):
     rate_decrease.append(inertias[i-1] - inertias[i])
+
+# Find the point where rate of decrease starts to slow down significantly
+optimal_k = rate_decrease.index(max(rate_decrease[:5])) + 2  # +2 because we start from k=2
+print(f"   - Suggested optimal K: {optimal_k}")
+
+# Apply K-Means with optimal K
+print(f"\n3. Applying K-Means with K={optimal_k}:")
+final_kmeans = KMeans(n_clusters=optimal_k, random_state=42, n_init=10)
+cluster_labels = final_kmeans.fit_predict(X_cluster_scaled)
+
+# Analyze clusters
+print("   - Clustering completed")
+print(f"   - Cluster centers shape: {final_kmeans.cluster_centers_.shape}")
