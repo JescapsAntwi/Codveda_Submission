@@ -431,3 +431,9 @@ y_pred_rf = rf_classifier.predict(X_test_rf_scaled)
 cv_scores = cross_val_score(rf_classifier, X_train_rf_scaled, y_train_rf, cv=5)
 print(f"   - Cross-validation scores: {cv_scores}")
 print(f"   - Mean CV accuracy: {cv_scores.mean():.4f} (+/- {cv_scores.std() * 2:.4f})")
+
+# Test set evaluation
+accuracy_rf = accuracy_score(y_test_rf, y_pred_rf)
+f1_rf = f1_score(y_test_rf, y_pred_rf, average='weighted')
+print(f"   - Test accuracy: {accuracy_rf:.4f}")
+print(f"   - Test F1-score: {f1_rf:.4f}")
