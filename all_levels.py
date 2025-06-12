@@ -230,3 +230,10 @@ X_binary, y_binary = make_classification(
     n_samples=1000, n_features=10, n_informative=5, n_redundant=3,
     n_classes=2, random_state=42
 )
+
+# Add feature names
+feature_names = [f'feature_{i+1}' for i in range(X_binary.shape[1])]
+X_binary_df = pd.DataFrame(X_binary, columns=feature_names)
+
+print(f"   - Dataset shape: {X_binary.shape}")
+print(f"   - Class distribution: {np.bincount(y_binary)}")
