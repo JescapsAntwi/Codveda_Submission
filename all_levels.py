@@ -221,3 +221,5 @@ class_report = classification_report(y_test_iris, y_pred_final, target_names=iri
 print(f"   - Final Accuracy: {accuracy:.4f}")
 print(f"   - Confusion Matrix:\n{conf_matrix}")
 print(f"   - Classification Report:\n{class_report}")
+
+print("\n" + "=" * 10 + " LOGISTIC REGRESSION MODEL IMPLEMENTATION FOR BINARY CLASSIFICATION " + "=" * 10)
