@@ -450,3 +450,73 @@ for i, row in feature_importance_rf.head(10).iterrows():
     print(f"   - {row['Feature']}: {row['Importance']:.4f}")
 
 print("============= SUPPORT VECTOR MACHINE FOR CLASSIFICATION IMPLEMENTATION ================")
+print("\n--- TASK 2: SUPPORT VECTOR MACHINE ---")
+
+# Use the binary classification dataset from earlier
+print("1. Training SVM Models with Different Kernels:")
+
+# Test different kernels
+kernels = ['linear', 'rbf', 'poly']
+svm_results = {}
+
+for kernel in kernels:
+    print(f"\n   Testing {kernel.upper()} kernel:")
+    
+    # Train SVM model
+    svm_model = SVC(kernel=kernel, random_state=42, probability=True)
+    svm_model.fit(X_train_bin_scaled, y_train_bin)
+    
+    # Make predictions
+    y_pred_svm = svm_model.predict(X_test_bin_scaled)
+    y_pred_proba_svm = svm_model.predict_proba(X_test_bin_scaled)[:, 1]
+    
+    # Evaluate model
+    accuracy_svm = accuracy_score(y_test_bin, y_pred_svm)
+    f1_svm = f1_score(y_test_bin, y_pred_svm)
+    
+    # ROC AUC
+    fpr_svm, tpr_svm, _ = roc_curve(y_test_bin, y_pred_proba_svm)
+    auc_svm = auc(fpr_svm, tpr_svm)
+    
+    svm_results[kernel] = {
+        'accuracy': accuracy_svm,
+        'f1_score': f1_svm,
+        'auc': auc_svm
+    }
+    
+    print(f"     - Accuracy: {accuracy_svm:.4f}")
+    print(f"     - F1-Score: {f1_svm:.4f}")
+    print(f"     - AUC: {auc_svm:.4f}")
+
+# Find best kernel
+best_kernel = max(svm_results.keys(), key=lambda k: svm_results[k]['accuracy'])
+print(f"\n2. Best performing kernel: {best_kernel.upper()}")
+print(f"   - Best accuracy: {svm_results[best_kernel]['accuracy']:.4f}")
+
+# Hyperparameter tuning for best kernel
+if best_kernel == 'rbf':
+    print("\n3. Hyperparameter Tuning for RBF Kernel:")
+    param_grid_svm = {
+        'C': [0.1, 1, 10, 100],
+        'gamma': ['scale', 'auto', 0.001, 0.01, 0.1, 1]
+    }
+else:
+    print(f"\n3. Hyperparameter Tuning for {best_kernel.upper()} Kernel:")
+    param_grid_svm = {'C': [0.1, 1, 10, 100]}
+
+# Grid search for SVM
+svm_base = SVC(kernel=best_kernel, random_state=42, probability=True)
+svm_grid_search = GridSearchCV(svm_base, param_grid_svm, cv=5, scoring='accuracy')
+svm_grid_search.fit(X_train_bin_scaled, y_train_bin)
+
+print(f"   - Best parameters: {svm_grid_search.best_params_}")
+print(f"   - Best CV score: {svm_grid_search.best_score_:.4f}")
+
+# Final SVM evaluation
+final_svm = svm_grid_search.best_estimator_
+y_pred_final_svm = final_svm.predict(X_test_bin_scaled)
+
+print("\n4. Final SVM Model Performance:")
+print(f"   - Test Accuracy: {accuracy_score(y_test_bin, y_pred_final_svm):.4f}")
+print(f"   - Classification Report:")
+print(classification_report(y_test_bin, y_pred_final_svm, indent='     '))
