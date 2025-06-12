@@ -147,3 +147,14 @@ rmse = np.sqrt(mse)
 print(f"   - R-squared Score: {r2:.4f}")
 print(f"   - Mean Squared Error: {mse:.4f}")
 print(f"   - Root Mean Squared Error: {rmse:.4f}")
+
+# Interpret model coefficients
+print("\n4. Model Coefficients Interpretation:")
+feature_importance = pd.DataFrame({
+    'Feature': housing_data.feature_names,
+    'Coefficient': lr_model.coef_
+}).sort_values('Coefficient', key=abs, ascending=False)
+
+print("   Top 5 most important features:")
+for i, row in feature_importance.head().iterrows():
+    print(f"   - {row['Feature']}: {row['Coefficient']:.4f}")
