@@ -223,3 +223,10 @@ print(f"   - Confusion Matrix:\n{conf_matrix}")
 print(f"   - Classification Report:\n{class_report}")
 
 print("\n" + "=" * 10 + " LOGISTIC REGRESSION MODEL IMPLEMENTATION FOR BINARY CLASSIFICATION " + "=" * 10)
+
+# Create a binary classification dataset
+print("1. Creating Binary Classification Dataset:")
+X_binary, y_binary = make_classification(
+    n_samples=1000, n_features=10, n_informative=5, n_redundant=3,
+    n_classes=2, random_state=42
+)
