@@ -182,3 +182,22 @@ X_test_iris_scaled = iris_scaler.transform(X_test_iris)
 
 print(f"   - Training samples: {X_train_iris_scaled.shape[0]}")
 print(f"   - Testing samples: {X_test_iris_scaled.shape[0]}")
+
+# Test different values of K
+print("\n2. Testing Different K Values:")
+k_values = [1, 3, 5, 7, 9, 11]
+k_results = []
+
+for k in k_values:
+    # Train KNN model
+    knn = KNeighborsClassifier(n_neighbors=k)
+    knn.fit(X_train_iris_scaled, y_train_iris)
+    
+    # Make predictions
+    y_pred_knn = knn.predict(X_test_iris_scaled)
+    
+    # Calculate accuracy
+    accuracy = accuracy_score(y_test_iris, y_pred_knn)
+    k_results.append(accuracy)
+    
+    print(f"   - K={k}: Accuracy = {accuracy:.4f}")
