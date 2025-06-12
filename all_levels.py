@@ -114,3 +114,9 @@ y_housing = housing_data.target
 
 print(f"Housing dataset shape: {X_housing.shape}")
 print(f"Features: {list(X_housing.columns)}")
+
+# Preprocess the housing data
+print("\n1. Preprocessing Housing Data:")
+housing_scaler = StandardScaler()
+X_housing_scaled = housing_scaler.fit_transform(X_housing)
+print("   - Applied StandardScaler to all features")
