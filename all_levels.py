@@ -404,3 +404,20 @@ X_train_rf, X_test_rf, y_train_rf, y_test_rf = train_test_split(
 rf_scaler = StandardScaler()
 X_train_rf_scaled = rf_scaler.fit_transform(X_train_rf)
 X_test_rf_scaled = rf_scaler.transform(X_test_rf)
+
+# Hyperparameter tuning
+print("\n2. Hyperparameter Tuning:")
+param_grid = {
+    'n_estimators': [50, 100, 200],
+    'max_depth': [5, 10, None],
+    'min_samples_split': [2, 5],
+    'min_samples_leaf': [1, 2]
+}
+
+# Grid search with cross-validation
+rf_base = RandomForestClassifier(random_state=42)
+grid_search = GridSearchCV(rf_base, param_grid, cv=5, scoring='accuracy', n_jobs=-1)
+grid_search.fit(X_train_rf_scaled, y_train_rf)
+
+print(f"   - Best parameters: {grid_search.best_params_}")
+print(f"   - Best CV score: {grid_search.best_score_:.4f}")
