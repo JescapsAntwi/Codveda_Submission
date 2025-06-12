@@ -280,3 +280,5 @@ coefficients = pd.DataFrame({
 print("   Top 5 most important features:")
 for i, row in coefficients.head().iterrows():
     print(f"   - {row['Feature']}: Coef={row['Coefficient']:.4f}, OR={row['Odds_Ratio']:.4f}")
+
+print("\n============= DECISION TREES ================")
