@@ -108,3 +108,6 @@ print("\n--- TASK 2: LINEAR REGRESSION MODEL BUILDING ---")
 
 from sklearn.datasets import fetch_california_housing
 housing_data = fetch_california_housing()
+
+X_housing = pd.DataFrame(housing_data.data, columns=housing_data.feature_names)
+y_housing = housing_data.target
