@@ -212,3 +212,12 @@ print("\n3. Final KNN Model Evaluation:")
 final_knn = KNeighborsClassifier(n_neighbors=best_k)
 final_knn.fit(X_train_iris_scaled, y_train_iris)
 y_pred_final = final_knn.predict(X_test_iris_scaled)
+
+# Detailed evaluation
+accuracy = accuracy_score(y_test_iris, y_pred_final)
+conf_matrix = confusion_matrix(y_test_iris, y_pred_final)
+class_report = classification_report(y_test_iris, y_pred_final, target_names=iris.target_names)
+
+print(f"   - Final Accuracy: {accuracy:.4f}")
+print(f"   - Confusion Matrix:\n{conf_matrix}")
+print(f"   - Classification Report:\n{class_report}")
