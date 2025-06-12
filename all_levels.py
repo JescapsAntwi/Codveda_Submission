@@ -353,3 +353,9 @@ for k in k_range:
     kmeans.fit(X_cluster_scaled)
     inertias.append(kmeans.inertia_)
     print(f"   - K={k}: Inertia = {kmeans.inertia_:.2f}")
+
+# Find elbow point (simplified method)
+# Calculate the rate of decrease in inertia
+rate_decrease = []
+for i in range(1, len(inertias)):
+    rate_decrease.append(inertias[i-1] - inertias[i])
