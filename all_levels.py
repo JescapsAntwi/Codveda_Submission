@@ -165,3 +165,6 @@ print("\n--- TASK 3: K-NEAREST NEIGHBORS CLASSIFIER ---")
 iris = load_iris()
 X_iris = iris.data
 y_iris = iris.target
+
+print(f"Iris dataset shape: {X_iris.shape}")
+print(f"Classes: {iris.target_names}")
