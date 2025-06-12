@@ -158,3 +158,5 @@ feature_importance = pd.DataFrame({
 print("   Top 5 most important features:")
 for i, row in feature_importance.head().iterrows():
     print(f"   - {row['Feature']}: {row['Coefficient']:.4f}")
+
+print("\n--- TASK 3: K-NEAREST NEIGHBORS CLASSIFIER ---")
