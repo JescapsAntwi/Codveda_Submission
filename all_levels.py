@@ -105,3 +105,6 @@ print("   - Preprocessing completed successfully!")
 
 
 print("\n--- TASK 2: LINEAR REGRESSION MODEL BUILDING ---")
+
+from sklearn.datasets import fetch_california_housing
+housing_data = fetch_california_housing()
