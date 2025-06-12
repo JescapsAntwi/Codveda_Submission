@@ -102,3 +102,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 print(f"   - Training set: {X_train.shape[0]} samples")
 print(f"   - Testing set: {X_test.shape[0]} samples")
 print("   - Preprocessing completed successfully!")
+
+
+print("\n--- TASK 2: LINEAR REGRESSION MODEL BUILDING ---")
