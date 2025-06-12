@@ -421,3 +421,8 @@ grid_search.fit(X_train_rf_scaled, y_train_rf)
 
 print(f"   - Best parameters: {grid_search.best_params_}")
 print(f"   - Best CV score: {grid_search.best_score_:.4f}")
+
+# Train final Random Forest model
+print("\n3. Training Final Random Forest Model:")
+rf_classifier = grid_search.best_estimator_
+y_pred_rf = rf_classifier.predict(X_test_rf_scaled)
