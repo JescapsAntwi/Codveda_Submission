@@ -206,3 +206,9 @@ for k in k_values:
 # Find best K value
 best_k = k_values[np.argmax(k_results)]
 print(f"\n   Best K value: {best_k} with accuracy: {max(k_results):.4f}")
+
+# Train final KNN model with best K
+print("\n3. Final KNN Model Evaluation:")
+final_knn = KNeighborsClassifier(n_neighbors=best_k)
+final_knn.fit(X_train_iris_scaled, y_train_iris)
+y_pred_final = final_knn.predict(X_test_iris_scaled)
