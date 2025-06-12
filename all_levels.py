@@ -111,3 +111,6 @@ housing_data = fetch_california_housing()
 
 X_housing = pd.DataFrame(housing_data.data, columns=housing_data.feature_names)
 y_housing = housing_data.target
+
+print(f"Housing dataset shape: {X_housing.shape}")
+print(f"Features: {list(X_housing.columns)}")
