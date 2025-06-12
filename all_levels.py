@@ -174,3 +174,8 @@ print("\n1. Preparing Iris Dataset:")
 X_train_iris, X_test_iris, y_train_iris, y_test_iris = train_test_split(
     X_iris, y_iris, test_size=0.3, random_state=42, stratify=y_iris
 )
+
+# Scale the features
+iris_scaler = StandardScaler()
+X_train_iris_scaled = iris_scaler.fit_transform(X_train_iris)
+X_test_iris_scaled = iris_scaler.transform(X_test_iris)
