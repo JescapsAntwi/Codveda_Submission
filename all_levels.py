@@ -13,13 +13,13 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.metrics import (accuracy_score, confusion_matrix, classification_report, 
                            mean_squared_error, r2_score, roc_curve, auc, f1_score)
-from sklearn.datasets import load_iris, load_boston, make_classification, make_blobs
+#from sklearn.datasets import load_iris, load_boston, make_classification, make_blobs
 import warnings
 warnings.filterwarnings('ignore')
 
 print("\n"+ "=" * 50)
 print("LEVEL 1 - BASIC TASKS")
-print("= * 50")
+print("= " * 50)
 
 print("\n--- TASK 1: DATA PREPROCESSING ---")
 
