@@ -168,3 +168,9 @@ y_iris = iris.target
 
 print(f"Iris dataset shape: {X_iris.shape}")
 print(f"Classes: {iris.target_names}")
+
+# Split the data
+print("\n1. Preparing Iris Dataset:")
+X_train_iris, X_test_iris, y_train_iris, y_test_iris = train_test_split(
+    X_iris, y_iris, test_size=0.3, random_state=42, stratify=y_iris
+)
