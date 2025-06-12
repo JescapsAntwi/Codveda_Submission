@@ -134,3 +134,6 @@ print("\n2. Training Linear Regression Model:")
 lr_model = LinearRegression()
 lr_model.fit(X_train_house, y_train_house)
 print("   - Model training completed")
+
+# Make predictions
+y_pred_house = lr_model.predict(X_test_house)
