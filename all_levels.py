@@ -297,3 +297,18 @@ y_pred_dt = dt_classifier.predict(X_test_iris)
 accuracy_dt = accuracy_score(y_test_iris, y_pred_dt)
 f1_dt = f1_score(y_test_iris, y_pred_dt, average='weighted')
 conf_matrix_dt = confusion_matrix(y_test_iris, y_pred_dt)
+
+print(f"   - Accuracy: {accuracy_dt:.4f}")
+print(f"   - F1-Score: {f1_dt:.4f}")
+print(f"   - Confusion Matrix:\n{conf_matrix_dt}")
+
+# Feature importance
+print("\n2. Feature Importance Analysis:")
+feature_importance_dt = pd.DataFrame({
+    'Feature': iris.feature_names,
+    'Importance': dt_classifier.feature_importances_
+}).sort_values('Importance', ascending=False)
+
+print("   Feature importance ranking:")
+for i, row in feature_importance_dt.iterrows():
+    print(f"   - {row['Feature']}: {row['Importance']:.4f}")
