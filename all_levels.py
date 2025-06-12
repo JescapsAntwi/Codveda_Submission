@@ -36,3 +36,6 @@ data = {
     'experience': np.random.randint(0, 30, n_samples),
     'target': np.random.randint(0, 2, n_samples)  # Binary target
 }
+
+# Create DataFrame
+df = pd.DataFrame(data)
