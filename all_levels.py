@@ -292,3 +292,8 @@ dt_classifier.fit(X_train_iris, y_train_iris)
 
 # Make predictions
 y_pred_dt = dt_classifier.predict(X_test_iris)
+
+# Evaluate the model
+accuracy_dt = accuracy_score(y_test_iris, y_pred_dt)
+f1_dt = f1_score(y_test_iris, y_pred_dt, average='weighted')
+conf_matrix_dt = confusion_matrix(y_test_iris, y_pred_dt)
