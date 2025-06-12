@@ -84,3 +84,21 @@ scaler = StandardScaler()
 df[numerical_cols] = scaler.fit_transform(df[numerical_cols])
 print("   - Applied StandardScaler to numerical features")
 print(f"   - Scaled columns: {numerical_cols}")
+
+# Step 4: Prepare final dataset and split
+print("\n4. Preparing Final Dataset:")
+
+# Select features for modeling (excluding original categorical columns)
+feature_cols = ['age', 'income', 'education_encoded', 'experience'] + list(city_dummies.columns)
+X = df[feature_cols]
+y = df['target']
+
+print(f"   - Final feature set shape: {X.shape}")
+print(f"   - Target variable shape: {y.shape}")
+
+# Split dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+
+print(f"   - Training set: {X_train.shape[0]} samples")
+print(f"   - Testing set: {X_test.shape[0]} samples")
+print("   - Preprocessing completed successfully!")
