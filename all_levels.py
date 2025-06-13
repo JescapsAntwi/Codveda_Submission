@@ -38,6 +38,7 @@ data = {
     'city': np.random.choice(['New York', 'Los Angeles', 'Chicago', 'Houston'], n_samples), # an array of cities is created for random selection for the samples
     'experience': np.random.randint(0, 30, n_samples),
     'target': np.random.randint(0, 2, n_samples)  # Binary target
+    # Binary Classification target (common in ML for Yes/no predictions, True/false outcomes, Pass/ Fail classifications, Success/ failure predictions)
 }
 
 # Create DataFrame
