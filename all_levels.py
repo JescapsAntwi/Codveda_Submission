@@ -76,7 +76,7 @@ print("   - Applied label encoding to education (ordinal)")
 # One-hot encoding for city (no ordinal relationship because the cities are not ordered in any way)
 # nominal relationship
 city_dummies = pd.get_dummies(df['city'], prefix='city') #finds unique city names and prefixes them with city. like new york becomes city_new york
-df = pd.concat([df, city_dummies], axis=1) #combine two new dataframes into one dataframe and place them side by side (axis)
+df = pd.concat([df, city_dummies], axis=1) #combine two new dataframes into one dataframe and place them side by side (axis. axis = 0 places them on top of each other)
 print("   - Applied one-hot encoding to city (nominal)")
 
 # Step 3: Normalize/Standardize numerical features
