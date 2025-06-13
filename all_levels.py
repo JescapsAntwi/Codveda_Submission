@@ -172,6 +172,7 @@ for i, row in feature_importance.head().iterrows():
     print(f"   - {row['Feature']}: {row['Coefficient']:.4f}")
 
 print("\n--- TASK 3: K-NEAREST NEIGHBORS CLASSIFIER ---")
+#machine learning model which is used for classification problems (predicting whether an email is spam or not etc.)
 
 # Load Iris dataset for classification
 iris = load_iris()
