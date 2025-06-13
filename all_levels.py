@@ -30,7 +30,7 @@ np.random.seed(42)
 n_samples = 1000
 #encoding is done because ML models need numerical data/ input 
 
-# Generate sample data
+# Generate sample data as a dictionary
 data = {
     'age': np.random.randint(18, 80, n_samples), # an array of 1000 random numbers from 18 to 79 (80 exclusive) ,
     'income': np.random.normal(50000, 15000, n_samples), # an array of incomes based on a normal distribution (mean, standard deviation, number of random incomes to generate)
