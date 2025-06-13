@@ -150,7 +150,7 @@ print("   - Model training completed")
 # Make predictions
 y_pred_house = lr_model.predict(X_test_house)
 
-# Evaluate the model based on things it hasn't seen before
+# Evaluate the model based on things it hasn't seen before (the testing set it never saw during training)
 print("\n3. Model Evaluation:")
 r2 = r2_score(y_test_house, y_pred_house)
 mse = mean_squared_error(y_test_house, y_pred_house)
