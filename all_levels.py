@@ -361,6 +361,7 @@ print("============== K MEANS CLUSTERING IMPLEMENTATION ================")
 # K-Means is used for finding hidden groups or patterns within your data when you don't already have labels or answers.
 # Create clustering dataset
 print("1. Creating Clustering Dataset:")
+# make_blobs  is a function that creates a fake dataset specifically designed to have clear, distinct groups (or "blobs") of data points.
 X_cluster, _ = make_blobs(n_samples=300, centers=4, cluster_std=1.0, random_state=42)
 
 print(f"   - Dataset shape: {X_cluster.shape}")
