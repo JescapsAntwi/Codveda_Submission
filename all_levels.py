@@ -41,7 +41,7 @@ data = {
     # Binary Classification target (common in ML for Yes/no predictions, True/false outcomes, Pass/ Fail classifications, Success/ failure predictions)
 }
 
-# Create a pandas DataFrame
+# Create a pandas DataFrame (similar to an excel sheet but customized for python)
 df = pd.DataFrame(data)
 
 # Introduce missing values randomly
