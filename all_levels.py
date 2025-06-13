@@ -173,6 +173,7 @@ for i, row in feature_importance.head().iterrows():
 
 print("\n--- TASK 3: K-NEAREST NEIGHBORS CLASSIFIER ---")
 #machine learning model which is used for classification problems (predicting whether an email is spam or not etc.)
+#k is the number of neighbours the model looks at 
 
 # Load Iris dataset for classification
 iris = load_iris()
