@@ -31,8 +31,8 @@ n_samples = 1000
 
 # Generate sample data
 data = {
-    'age': np.random.randint(18, 80, n_samples) # 1000 random numbers from 18 to 79 (80 exclusive) ,
-    'income': np.random.normal(50000, 15000, n_samples),
+    'age': np.random.randint(18, 80, n_samples), # an array of 1000 random numbers from 18 to 79 (80 exclusive) ,
+    'income': np.random.normal(50000, 15000, n_samples) # ,
     'education': np.random.choice(['High School', 'Bachelor', 'Master', 'PhD'], n_samples),
     'city': np.random.choice(['New York', 'Los Angeles', 'Chicago', 'Houston'], n_samples),
     'experience': np.random.randint(0, 30, n_samples),
