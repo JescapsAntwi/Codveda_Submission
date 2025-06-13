@@ -152,7 +152,7 @@ y_pred_house = lr_model.predict(X_test_house)
 
 # Evaluate the model based on things it hasn't seen before (the testing set it never saw during training)
 print("\n3. Model Evaluation:")
-r2 = r2_score(y_test_house, y_pred_house)
+r2 = r2_score(y_test_house, y_pred_house) #between 0 and 1
 mse = mean_squared_error(y_test_house, y_pred_house)
 rmse = np.sqrt(mse)
 
