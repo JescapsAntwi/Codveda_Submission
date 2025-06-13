@@ -557,6 +557,8 @@ report = classification_report(y_test_bin, y_pred_final_svm)
 indented_report = '       ' + report.replace('\n', '\n')
 print(indented_report)
 
+
+#neural networks are a network of interconnected "neurons" (or nodes) organized in layers, where information flows through, gets processed, and eventually leads to a prediction.
 print("=========== NEURAL NETWORKS ==============")
 try:
     import tensorflow as tf
