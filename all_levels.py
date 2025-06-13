@@ -205,7 +205,7 @@ for k in k_values:
     knn = KNeighborsClassifier(n_neighbors=k)
     knn.fit(X_train_iris_scaled, y_train_iris)
     
-    # Make predictions
+    # Make predictions on the data not seen during training
     y_pred_knn = knn.predict(X_test_iris_scaled)
     
     # Calculate accuracy
