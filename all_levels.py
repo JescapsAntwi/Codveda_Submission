@@ -233,7 +233,7 @@ conf_matrix = confusion_matrix(y_test_iris, y_pred_final)
 class_report = classification_report(y_test_iris, y_pred_final, target_names=iris.target_names)
 
 print(f"   - Final Accuracy: {accuracy:.4f}")
-print(f"   - Confusion Matrix:\n{conf_matrix}")
+print(f"   - Confusion Matrix:\n{conf_matrix}") #shows how many times the model confused one category for another
 print(f"   - Classification Report:\n{class_report}")
 
 print("\n" + "=" * 10 + " LOGISTIC REGRESSION MODEL IMPLEMENTATION FOR BINARY CLASSIFICATION " + "=" * 10)
