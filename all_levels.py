@@ -242,6 +242,7 @@ print("\n" + "=" * 10 + " LOGISTIC REGRESSION MODEL IMPLEMENTATION FOR BINARY CL
 #yes/no prediction task is known as binary classification
 # Create a binary classification dataset
 print("1. Creating Binary Classification Dataset:")
+#create 1000 rows of data, 10 columns, 5 of them will be used to predict yes/ no, 3 will not be used, 2 classes (1 for yes, the other for no, random state ensures that we will get the exact same dataset every time you run this code.)
 X_binary, y_binary = make_classification(
     n_samples=1000, n_features=10, n_informative=5, n_redundant=3,
     n_classes=2, random_state=42
