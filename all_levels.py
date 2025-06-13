@@ -415,6 +415,7 @@ silhouette_avg = silhouette_score(X_cluster_scaled, cluster_labels)
 print(f"   - Average Silhouette Score: {silhouette_avg:.4f}")
 
 print("========== RANDOM FOREST CLASSIFIER IMPLEMENTATION ===========")
+#A Random Forest is an ensemble learning method that works by creating a "forest" of many individual Decision Trees and then combining their predictions to get a more accurate and stable result.
 print("1. Creating Complex Classification Dataset:")
 X_complex, y_complex = make_classification(
     n_samples=1500, n_features=20, n_informative=15, n_redundant=3,
