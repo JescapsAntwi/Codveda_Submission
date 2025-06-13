@@ -107,6 +107,7 @@ print(f"   - Final feature set shape: {X.shape}")
 print(f"   - Target variable shape: {y.shape}")
 
 # Split dataset into training and testing sets
+# splitting is done randomly, stratify ensures that ratio of values in training and testing sets are proportional or roughly the same
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
 print(f"   - Training set: {X_train.shape[0]} samples")
