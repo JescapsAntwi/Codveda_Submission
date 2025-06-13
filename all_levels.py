@@ -286,6 +286,7 @@ print(f"   - Confusion Matrix:\n{conf_matrix}")
 #this is used to check how well a binary classification model performs
 #false positive rate, true positive rate, thresholds
 fpr, tpr, _ = roc_curve(y_test_bin, y_pred_proba)
+#area under the curve 
 roc_auc = auc(fpr, tpr)
 print(f"   - ROC AUC Score: {roc_auc:.4f}")
 
