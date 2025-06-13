@@ -267,6 +267,7 @@ X_test_bin_scaled = binary_scaler.transform(X_test_bin)
 # Train logistic regression model
 print("\n2. Training Logistic Regression Model:")
 log_reg = LogisticRegression(random_state=42)
+#learn on the clues and answers
 log_reg.fit(X_train_bin_scaled, y_train_bin)
 
 # Make predictions
