@@ -35,7 +35,7 @@ data = {
     'age': np.random.randint(18, 80, n_samples), # an array of 1000 random numbers from 18 to 79 (80 exclusive) ,
     'income': np.random.normal(50000, 15000, n_samples), # an array of incomes based on a normal distribution (mean, standard deviation, number of random incomes to generate)
     'education': np.random.choice(['High School', 'Bachelor', 'Master', 'PhD'], n_samples), # an array of education levels is created and random selection is done on the education levels for the samples
-    'city': np.random.choice(['New York', 'Los Angeles', 'Chicago', 'Houston'], n_samples),
+    'city': np.random.choice(['New York', 'Los Angeles', 'Chicago', 'Houston'], n_samples), # an array of cities is created for random selection for the samples
     'experience': np.random.randint(0, 30, n_samples),
     'target': np.random.randint(0, 2, n_samples)  # Binary target
 }
