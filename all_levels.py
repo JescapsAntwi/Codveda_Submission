@@ -68,12 +68,12 @@ mean_experience = df['experience'].mean()
 df['experience'].fillna(mean_experience, inplace=True)
 print(f"   - Filled missing experience values with mean: {mean_experience:.2f}")
 
-# Label encoding for education (ordinal relationship)
+# Label encoding for education (ordinal relationship because the education levels are ordered)
 education_mapping = {'High School': 1, 'Bachelor': 2, 'Master': 3, 'PhD': 4}
 df['education_encoded'] = df['education'].map(education_mapping)
 print("   - Applied label encoding to education (ordinal)")
 
-# One-hot encoding for city (no ordinal relationship)
+# One-hot encoding for city (no ordinal relationship because the cities are not ordered in any way)
 city_dummies = pd.get_dummies(df['city'], prefix='city')
 df = pd.concat([df, city_dummies], axis=1)
 print("   - Applied one-hot encoding to city (nominal)")
