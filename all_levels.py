@@ -360,6 +360,8 @@ print(f"   - Best max_depth: {best_depth}")
 print("============== K MEANS CLUSTERING IMPLEMENTATION ================")
 # K-Means is used for finding hidden groups or patterns within your data when you don't already have labels or answers.
 # Create clustering dataset
+
+#K-Means works by calculating distances between data points
 print("1. Creating Clustering Dataset:")
 # make_blobs  is a function that creates a fake dataset specifically designed to have clear, distinct groups (or "blobs") of data points.
 #centers (natural groups created)
