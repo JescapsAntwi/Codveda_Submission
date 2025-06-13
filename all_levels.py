@@ -59,6 +59,7 @@ print("\n1. Handling Missing Data:")
 
 # Fill missing income with median (robust to outliers)
 median_income = df['income'].median()
+#inplace ensures that missing values are actually replaced
 df['income'].fillna(median_income, inplace=True)
 print(f"   - Filled missing income values with median: {median_income:.2f}")
 
