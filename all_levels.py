@@ -237,9 +237,9 @@ print(f"   - Confusion Matrix:\n{conf_matrix}") #shows how many times the model 
 print(f"   - Classification Report:\n{class_report}")
 
 print("\n" + "=" * 10 + " LOGISTIC REGRESSION MODEL IMPLEMENTATION FOR BINARY CLASSIFICATION " + "=" * 10)
-#logistic regression used for predicting yes/no responses
+#logistic regression used for predicting yes/no responses. usually a probability
 #linear regression used for predicting numbers
-
+#yes/no prediction task is known as binary classification
 # Create a binary classification dataset
 print("1. Creating Binary Classification Dataset:")
 X_binary, y_binary = make_classification(
