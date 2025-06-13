@@ -282,7 +282,7 @@ conf_matrix = confusion_matrix(y_test_bin, y_pred_log)
 print(f"   - Accuracy: {accuracy:.4f}")
 print(f"   - Confusion Matrix:\n{conf_matrix}")
 
-# ROC Curve
+# ROC Curve -> receiver operating characteristic curve
 #this is used to check how well a binary classification model performs
 fpr, tpr, _ = roc_curve(y_test_bin, y_pred_proba)
 roc_auc = auc(fpr, tpr)
