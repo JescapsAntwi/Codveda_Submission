@@ -302,7 +302,7 @@ print("   Top 5 most important features:")
 for i, row in coefficients.head().iterrows():
     print(f"   - {row['Feature']}: Coef={row['Coefficient']:.4f}, OR={row['Odds_Ratio']:.4f}")
 #linear regression -> lines 
-#logistic regression -> sigmoid curves 
+#logistic regression -> sigmoid curves
 #decision trees -> makes decisions based on if-else-then rules like in real life
 
 print("\n============= DECISION TREES ================")
@@ -337,6 +337,7 @@ print("   Feature importance ranking:")
 for i, row in feature_importance_dt.iterrows():
     print(f"   - {row['Feature']}: {row['Importance']:.4f}")
 
+# Decision Trees can sometimes become too complex and start to "memorize" the training data perfectly, instead of learning general rules. this is called overfitting
 # Pruning demonstration
 print("\n3. Tree Pruning Analysis:")
 # Train trees with different max_depth values
