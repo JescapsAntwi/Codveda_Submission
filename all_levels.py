@@ -88,7 +88,7 @@ scaler = StandardScaler()
 
 # Fit and transform numerical features
 # fit -> learning about the data. calculates the mean of each column to understand how spread out the values are (standard deviation). 
-# transform -> the numbers in all the columns are transformed. 
+# transform -> the numbers in all the columns are transformed. For each number, it subtracts the average of its column and then divides by how spread out the numbers are.
 df[numerical_cols] = scaler.fit_transform(df[numerical_cols])
 print("   - Applied StandardScaler to numerical features")
 print(f"   - Scaled columns: {numerical_cols}")
