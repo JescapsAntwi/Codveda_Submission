@@ -143,7 +143,7 @@ print(f"   - Testing samples: {X_test_house.shape[0]}")
 # Train linear regression model
 print("\n2. Training Linear Regression Model:")
 lr_model = LinearRegression()
-#learn from input and predict values
+#learn from input and predict values -> x_train (clues), y_train(answers)
 lr_model.fit(X_train_house, y_train_house)
 print("   - Model training completed")
 
