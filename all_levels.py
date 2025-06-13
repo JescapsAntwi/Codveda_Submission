@@ -521,6 +521,7 @@ print(f"   - Test Accuracy: {accuracy_score(y_test_bin, y_pred_final_svm):.4f}")
 print(f"   - Classification Report:")
 report = classification_report(y_test_bin, y_pred_final_svm)
 indented_report = '       ' + report.replace('\n', '\n')
+print(indented_report)
 
 print("=========== NEURAL NETWORKS ==============")
 try:
