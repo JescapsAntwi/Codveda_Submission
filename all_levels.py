@@ -74,6 +74,7 @@ df['education_encoded'] = df['education'].map(education_mapping)
 print("   - Applied label encoding to education (ordinal)")
 
 # One-hot encoding for city (no ordinal relationship because the cities are not ordered in any way)
+# nominal relationship
 city_dummies = pd.get_dummies(df['city'], prefix='city')
 df = pd.concat([df, city_dummies], axis=1)
 print("   - Applied one-hot encoding to city (nominal)")
