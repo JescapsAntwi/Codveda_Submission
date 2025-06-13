@@ -84,7 +84,7 @@ print("\n3. Normalizing Numerical Features:")
 
 # Select numerical columns for scaling
 numerical_cols = ['age', 'income', 'experience']
-scaler = StandardScaler()
+scaler = StandardScaler() #making sure the column values are on the same scale for an efficient model performance 
 
 # Fit and transform numerical features
 # fit -> learning about the data. calculates the mean of each column to understand how spread out the values are (standard deviation). 
