@@ -98,6 +98,8 @@ print("\n4. Preparing Final Dataset:")
 
 # Select features for modeling (excluding original categorical columns)
 feature_cols = ['age', 'income', 'education_encoded', 'experience'] + list(city_dummies.columns)
+# X in ML reps all the features the model has to learn from. Also the input data -> independent variables
+# y is the variable or feature to be predicted -> dependent variables
 X = df[feature_cols]
 y = df['target']
 
