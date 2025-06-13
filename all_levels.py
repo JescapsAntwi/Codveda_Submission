@@ -190,6 +190,7 @@ X_train_iris, X_test_iris, y_train_iris, y_test_iris = train_test_split(
 )
 
 # Scale the features
+#knn fit is different from lr fit. In knn, fit tells the model to memorize the all the X_train_iris_scaled (clues) and their corresponding y_train_iris (answers) so it can find the closest neighbors later.
 iris_scaler = StandardScaler()
 X_train_iris_scaled = iris_scaler.fit_transform(X_train_iris)
 X_test_iris_scaled = iris_scaler.transform(X_test_iris)
