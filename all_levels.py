@@ -87,6 +87,7 @@ numerical_cols = ['age', 'income', 'experience']
 scaler = StandardScaler()
 
 # Fit and transform numerical features
+# fit -> learning about the data. calculates the mean of each column to understand how spread out the values are. 
 df[numerical_cols] = scaler.fit_transform(df[numerical_cols])
 print("   - Applied StandardScaler to numerical features")
 print(f"   - Scaled columns: {numerical_cols}")
