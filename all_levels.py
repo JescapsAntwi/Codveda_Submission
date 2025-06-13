@@ -45,6 +45,7 @@ data = {
 df = pd.DataFrame(data)
 
 # Introduce missing values randomly
+# list of row IDs, 10% of the data, if a row is found, do not pick it again
 missing_indices = np.random.choice(df.index, size=int(0.1 * len(df)), replace=False)
 df.loc[missing_indices[:50], 'income'] = np.nan
 df.loc[missing_indices[50:], 'experience'] = np.nan
