@@ -483,6 +483,7 @@ for i, row in feature_importance_rf.head(10).iterrows():
     print(f"   - {row['Feature']}: {row['Importance']:.4f}")
 
 print("============= SUPPORT VECTOR MACHINE FOR CLASSIFICATION IMPLEMENTATION ================")
+#SVMs try to find the "best" boundary (a line in 2D, a plane in 3D, or a hyperplane in higher dimensions) that separates the different classes of data points.
 print("\n--- TASK 2: SUPPORT VECTOR MACHINE ---")
 
 # Use the binary classification dataset from earlier
