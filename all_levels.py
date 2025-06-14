@@ -562,7 +562,7 @@ print(indented_report)
 
 #neural networks are a network of interconnected "neurons" (or nodes) organized in layers, where information flows through, gets processed, and eventually leads to a prediction.
 #layers -> Input layers, hidden layers, output layers
-#Backpropagation -> sending errors backward through the network
+#Backpropagation (Backward Pass)-> sending errors backward through the network
 #Activation functions like ReLU or sigmoid
 print("=========== NEURAL NETWORKS ==============")
 try:
