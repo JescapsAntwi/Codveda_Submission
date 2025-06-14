@@ -485,6 +485,7 @@ for i, row in feature_importance_rf.head(10).iterrows():
 print("============= SUPPORT VECTOR MACHINE FOR CLASSIFICATION IMPLEMENTATION ================")
 #SVMs try to find the "best" boundary (a line in 2D, a plane in 3D, or a hyperplane in higher dimensions) that separates the different classes of data points.
 #Instead of just finding any line that separates the classes, SVMs aim to find the line that has the largest possible "margin" around it.
+#The data points that lie closest to this separating boundary (and thus "support" the margin) are called Support Vectors.
 print("\n--- TASK 2: SUPPORT VECTOR MACHINE ---")
 
 # Use the binary classification dataset from earlier
