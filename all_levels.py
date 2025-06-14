@@ -561,6 +561,7 @@ print(indented_report)
 
 
 #neural networks are a network of interconnected "neurons" (or nodes) organized in layers, where information flows through, gets processed, and eventually leads to a prediction.
+#layers -> Input layers, hidden layers, output layers
 print("=========== NEURAL NETWORKS ==============")
 try:
     import tensorflow as tf
