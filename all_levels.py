@@ -502,7 +502,7 @@ for kernel in kernels:
     svm_model = SVC(kernel=kernel, random_state=42, probability=True)
     svm_model.fit(X_train_bin_scaled, y_train_bin)
     
-    # Make predictions
+    # Make predictions on unseen data during training
     y_pred_svm = svm_model.predict(X_test_bin_scaled)
     y_pred_proba_svm = svm_model.predict_proba(X_test_bin_scaled)[:, 1]
     
