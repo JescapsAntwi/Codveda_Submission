@@ -25,7 +25,7 @@ print("=" * 50)
 
 print("\n--- TASK 1: DATA PREPROCESSING ---")
 
-# Create a sample dataset with missing values and categorical variable
+# Create a sample dataset with missing values and categorical variables
 np.random.seed(42)
 n_samples = 1000
 #encoding is done because ML models need numerical data/ input 
