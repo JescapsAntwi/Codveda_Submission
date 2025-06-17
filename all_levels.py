@@ -15,7 +15,7 @@ from sklearn.metrics import (accuracy_score, confusion_matrix, classification_re
                            mean_squared_error, r2_score, roc_curve, auc, f1_score)
 from sklearn.datasets import load_iris, make_classification, make_blobs
 #from sklearn.datasets import load_iris, load_boston, make_classification, make_blobs
-from sklearn.datasets import fetc|h_california_housing, fetch_openml
+from sklearn.datasets import fetch_california_housing, fetch_openml
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -25,7 +25,7 @@ print("=" * 50)
 
 print("\n--- TASK 1: DATA PREPROCESSING ---")
 
-# Create a sample dataset with missing values and categorical variables
+# Create a sample dataset with missing values and categorical variable
 np.random.seed(42)
 n_samples = 1000
 #encoding is done because ML models need numerical data/ input 
@@ -126,7 +126,7 @@ y_housing = housing_data.target
 print(f"Housing dataset shape: {X_housing.shape}")
 print(f"Features: {list(X_housing.columns)}")
 
-# Preprocess the housing data for machine learning analysis
+# Preprocess the housing data for machine learning
 print("\n1. Preprocessing Housing Data:")
 housing_scaler = StandardScaler()
 X_housing_scaled = housing_scaler.fit_transform(X_housing)
